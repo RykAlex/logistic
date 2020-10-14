@@ -2,9 +2,11 @@ body {
 	margin: 0;
 
 	font-family: "PT Sans", sans-serif;
-	font-size: 15px;
+	font-size: 16px;
 	color: #585858;
 	line-height: 1.4;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 body.no-scroll {
 	overflow: hidden;
@@ -50,7 +52,7 @@ ol {
 	width: 100%;
 	max-width: 1230px;
 	margin: 0 auto;
-	padding: 0 15px;
+	padding: 0 1px;
 }
 
 /* Page */
@@ -71,6 +73,8 @@ ol {
 	right: 0;
 	left: 0;
 	z-index: 1000;
+
+	transition: background 0.2s linear;
 }
 .header--dark {
 	background-color: rgba(0, 0, 0, 0.9);
@@ -86,7 +90,7 @@ ol {
 .nav {
 	display: flex;
 	height: 100%;
-	font-style: 15px;
+	font-style: 16px;
 }
 .nav__link {
 	display: flex;
@@ -141,7 +145,7 @@ ol {
 	text-align: right;
 }
 .intro__countries {
-	font-size: 15px;
+	font-size: 16px;
 	color: #fff;
 }
 .intro__title {
@@ -195,7 +199,7 @@ ol {
 	color: #fff;
 }
 .request-form__text {
-	font-size: 15px;
+	font-size: 16px;
 	color: #fff;
 }
 .request-form__content {
@@ -388,7 +392,7 @@ ol {
 .services__text {
 	margin-bottom: 20px;
 
-	font-size: 15px;
+	font-size: 16px;
 	color: #585858;
 }
 .services__footer {
@@ -397,7 +401,7 @@ ol {
 
 .services__link {
 	display: inline-block;
-	font-size: 15px;
+	font-size: 16px;
 	color: #004af2;
 	text-decoration: none;
 
@@ -502,12 +506,12 @@ ol {
 	font-weight: 900;
 }
 .reviews__company {
-	font-size: 15px;
+	font-size: 16px;
 	color: #2c2c2c;
 	font-weight: 400;
 }
 .reviews__content {
-	font-style: 15px;
+	font-style: 16px;
 	line-height: 1.8;
 	color: #585858;
 }
@@ -574,7 +578,7 @@ ol {
 	font-weight: 900;
 }
 .benefits-list__text {
-	font-size: 15px;
+	font-size: 16px;
 	color: #585858;
 }
 
@@ -605,7 +609,7 @@ ol {
 .team__prof {
 	margin-bottom: 11px;
 
-	font-size: 15px;
+	font-size: 16px;
 	color: #585858;
 }
 .team__contacts {
@@ -694,11 +698,16 @@ ol {
 }
 .articales--column {
 	flex-direction: column;
+	margin-bottom: 75px;
 }
 .articales--column,
 .articales__item {
 	max-width: none;
 	margin-bottom: 45px;
+}
+.articales--column,
+.articales__item:last-child {
+	margin-bottom: 0;
 }
 .articales__item {
 	width: 100%;
@@ -710,7 +719,7 @@ ol {
 .articales__title {
 	margin-bottom: 15px;
 
-	font-size: 18px;
+	font-size: 24px;
 	font-weight: 900;
 	color: #2c2c2c;
 }
@@ -724,7 +733,7 @@ ol {
 .articales__text {
 	margin-bottom: 15px;
 
-	font-size: 15px;
+	font-size: 16px;
 	color: #585858;
 }
 .articales__date {
@@ -779,11 +788,9 @@ ol {
 /* Modals */
 .modal {
 	display: none;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 	width: 100%;
 	height: 100%;
+	overflow-y: auto;
 
 	background-color: rgba(0, 0, 0, 0.9);
 
@@ -791,15 +798,24 @@ ol {
 	top: 0;
 	left: 0;
 	z-index: 2000;
+	padding: 30px 15px;
 }
 .modal.show {
 	display: flex;
 }
 .modal__inner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100%;
+}
+.modal__content {
+	width: 100%;
+	max-width: 400px;
 	position: relative;
 
-	width: 400px;
 	padding: 25px;
+	margin-top: 50px;
 
 	background-color: #fff;
 }
@@ -822,7 +838,7 @@ ol {
 	line-height: 1.2;
 }
 .modal__text {
-	font-size: 15px;
+	font-size: 16px;
 	color: #2c2c2c;
 }
 .modal__footer {
@@ -842,7 +858,7 @@ ol {
 	color: #2c2c2c;
 }
 .modal__contacts {
-	font-size: 15px;
+	font-size: 16px;
 	color: #2c2c2c;
 	font-style: normal;
 }
@@ -920,7 +936,7 @@ ol {
 	font-size: 18px;
 }
 .text h6 {
-	font-size: 15px;
+	font-size: 16px;
 }
 .text ol,
 .text ul {
@@ -1008,6 +1024,17 @@ ol {
 	.footer {
 		background-size: 330px auto;
 		background-position: left 2px bottom 5px, right 2px bottom 5px;
+	}
+	/* Main */
+	.main {
+		flex-direction: column;
+	}
+	.main__col {
+		width: 100%;
+	}
+	/* Request-form */
+	.request-form--right {
+		margin: 30px auto 0;
 	}
 }
 
@@ -1213,6 +1240,11 @@ ol {
 	.footer {
 		background-size: 250px auto;
 		background-position: left -100px bottom -20px, right -100px bottom -20px;
+	}
+	/* Modal */
+	.modal__close {
+		right: 0;
+		top: -30px;
 	}
 }
 @media (max-width: 320px) {
