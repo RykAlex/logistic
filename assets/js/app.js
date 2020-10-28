@@ -62,9 +62,83 @@ $(function () {
 
 	}
 
+	/* Modal
+================================ */
+	$('[data-modal]').on('click', function (event) {
+		event.preventDefault();
+		let modal = $(this).data('modal');
+		$('body').addClass('no-scroll');
+		$(modal).addClass('show');
+		setTimeout(function () {
+			$(modal).find('.modal__content').css({
+				transform: 'scale(1)',
+				opacity: '1'
+			});
+		});
+	});
+	$('[data-modal-close]').on('click', function (event) {
+		event.preventDefault();
+		let modal = $(this).parents('.modal');
+		modalClose(modal);
+	});
+	$('.modal').on('click', function () {
+		let modal = $(this);
+		modalClose(modal);
+	});
+	$('.modal__content').on('click', function (event) {
+		event.stopPropagation();
+	});
+	function modalClose(modal) {
+		modal.find('.modal__content').css({
+			transform: 'scale(0.5)',
+			opacity: '0'
+		});
+
+		setTimeout(function () {
+			$('body').removeClass('no-scroll');
+			modal.removeClass('show');
+		}, 200);
+	}
+
+
+	/* Slick slider https://kenwheeler.github.io/slick/
+	===================================*/
+	/* Intro slider */
+
+	let introSlider = $("#introSlider");
+
+	introSlider.slick({
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		fade: true,
+		autoplay: true,
+		autoplaySpeed: 4000,
+		speed: 500
+	});
+
+	$('#introSliderPrev').on('click', function () {
+		introSlider.slick('slickPrev')
+	});
+	$('#introSliderNext').on('click', function () {
+		introSlider.slick('slickNext')
+	});
+
+	/* Reviews slider */
+	let reviewsSlider = $("#reviewsSlider");
+	reviewsSlider.slick({
+		infinite: true,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		arrows: false,
+		dots: true,
+		speed: 500
+	});
 
 
 
 });
+
 
 
