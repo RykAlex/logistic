@@ -98,7 +98,7 @@ $(function () {
 				transform: 'scale(1)',
 				opacity: '1'
 			});
-		});
+		}, 100);
 	});
 	$('[data-modal-close]').on('click', function (event) {
 		event.preventDefault();
@@ -139,7 +139,7 @@ $(function () {
 		fade: true,
 		autoplay: true,
 		autoplaySpeed: 4000,
-		speed: 500
+		speed: 1000
 	});
 
 	$('#introSliderPrev').on('click', function () {
@@ -157,7 +157,9 @@ $(function () {
 		slidesToScroll: 1,
 		arrows: false,
 		dots: true,
-		speed: 500
+		autoplay: true,
+		autoplaySpeed: 4000,
+		speed: 1000
 	});
 
 

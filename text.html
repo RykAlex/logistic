@@ -6,35 +6,44 @@
 	<link
 		href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,900&family=PT+Sans:wght@400;700&display=swap"
 		rel="stylesheet">
+		<link rel="stylesheet" href="assets/css/slick.css">
+		<link rel="stylesheet" href="assets/css/aos.css">
 	<link rel="stylesheet" href="assets/css/style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>CenterLogistic</title>
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/images/favicons/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicons/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicons/favicon-16x16.png">
+	<link rel="manifest" href="assets/images/favicons/manifest.json">
+	<link rel="mask-icon" href="assets/images/favicons/safari-pinned-tab.svg" color="#004af2">
+	<meta name="msapplication-TileColor" content="#004af2">
+	<meta name="theme-color" content="#004AF2">
 </head>
 
 <body>
 	<div class="page">
 
 		<!-- Header -->
-		<header class="header header--dark">
+		<header class="header" id="header">
 			<div class="container">
 				<div class="header__inner">
 					<a href="index.html"><img src="/assets/images/logo.svg" alt="Logo"></a>
 
-					<nav class="nav">
+					<nav class="nav" id="nav">
 						<a class="nav__link" href="index.html">Home Page</a>
 						<a class="nav__link" href="blog.html">Blog</a>
 						<a class="nav__link active" href="text.html">Privacy Policy</a>
 						<a class="nav__link" href="text.html">Terma & Conditions</a>
 					</nav>
-					<button class="burger" type="button">
-						<img class="img" class="burger__icon" src="assets/images/burger.svg" alt="">
+					<button class="burger" type="button" id="navToggle">
+						<img class="burger__icon" src="assets/images/burger.svg" alt="">
 					</button>
 				</div>
 			</div>
 		</header>
 
 		<!-- Intro -->
-		<div class="intro intro--text"></div>
+		<div class="intro intro--text" id="intro"></div>
 
 		<!-- Text -->
 		<section class="section section--last">
@@ -88,11 +97,6 @@
 			</div><!-- ./container -->
 		</section>
 
-
-
-	</div><!-- ./container -->
-	</section>
-
 	<!-- Footer -->
 	<footer class="footer">
 		<div class="container">
@@ -103,9 +107,9 @@
 					or E-mail: <a href="mailto:hello@centerlogistic.com">hello@centerlogistic.com</a></p>
 			</address>
 			<nav class="footer__nav">
-				<a href="#">Terms & Contidions</a>
-				<a href="#">Privacy Policy</a>
-				<a href="#">Our blog</a>
+				<a href="text.html">Terms & Contidions</a>
+				<a href="text.html">Privacy Policy</a>
+				<a href="blog.html">Our blog</a>
 			</nav>
 		</div><!-- ./container -->
 	</footer>
@@ -114,7 +118,9 @@
 
 
 	<!-- Javascript -->
-	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.1.min.js"></script>
+	<script src="assets/js/slick.min.js"></script>
+	<script src="assets/js/aos.js"></script>
 	<script src="assets/js/app.js"></script>
 
 </body>
